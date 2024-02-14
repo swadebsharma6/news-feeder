@@ -1,10 +1,9 @@
+import Main from "./Pages/Main/Main";
 
 const App = () => {
   return (
     <div>
-    <h1 className="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+      <Main></Main>
     </div>
   );
 };
