@@ -2,6 +2,18 @@ import logo from '../assets/icons/logo.png';
 import searchIcon from '../assets/icons/search.svg';
 
 const Header = () => {
+
+//   const [items, setItems] = useState({});
+//   console.log(items)
+
+
+//   useEffect(()=>{
+//     fetch('/public/news.json')
+//     .then(res => res.json())
+//     .then(data => setItems(data))
+//   }, []);
+
+
     return (
         <header>
         <nav className="border-b border-black py-6 md:py-8">
@@ -95,3 +107,4 @@ const Header = () => {
 };
 
 export default Header;
+
