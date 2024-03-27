@@ -2,16 +2,13 @@ import logo from '../assets/icons/logo.png';
 import searchIcon from '../assets/icons/search.svg';
 
 const Header = () => {
-
-//   const [items, setItems] = useState({});
-//   console.log(items)
-
-
-//   useEffect(()=>{
-//     fetch('/public/news.json')
-//     .then(res => res.json())
-//     .then(data => setItems(data))
-//   }, []);
+    const generalNews =(general)=>{
+        fetch(`http://localhost:8000/v2/top-headlines?category=${general}`)
+        .then(res => res.json())
+        .then(data => {
+            console.log('General News',data)
+        })
+    }
 
 
     return (
@@ -92,7 +89,8 @@ const Header = () => {
             <ul
                 className="flex flex-wrap items-center justify-center gap-5 text-xs font-semibold lg:text-base"
             >
-                <li><a href="#">General</a></li>
+            
+                <li><a onClick={generalNews} href="#">General</a></li>
                 <li><a href="#">Business</a></li>
                 <li><a href="#">Entertainment</a></li>
                 <li><a href="#">Health</a></li>
