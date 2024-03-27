@@ -1,22 +1,14 @@
 import logo from '../assets/icons/logo.png';
 import searchIcon from '../assets/icons/search.svg';
+import NavigationBar from './NavigationBar';
 
-const Header = () => {
-    const generalNews =(general)=>{
-        fetch(`http://localhost:8000/v2/top-headlines?category=${general}`)
-        .then(res => res.json())
-        .then(data => {
-            console.log('General News',data)
-        })
-    }
+const Header = ({onCategoryClick}) => {
 
 
     return (
         <header>
         <nav className="border-b border-black py-6 md:py-8">
-        <div
-            className="container mx-auto flex flex-wrap items-center justify-between gap-6"
-        >
+        <div className="container mx-auto flex flex-wrap items-center justify-between gap-6">
         
             <div className="flex items-center space-x-4">
                 <svg
@@ -86,18 +78,7 @@ const Header = () => {
         </div>
   
         <div className="container mx-auto mt-6">
-            <ul
-                className="flex flex-wrap items-center justify-center gap-5 text-xs font-semibold lg:text-base"
-            >
-            
-                <li><a onClick={generalNews} href="#">General</a></li>
-                <li><a href="#">Business</a></li>
-                <li><a href="#">Entertainment</a></li>
-                <li><a href="#">Health</a></li>
-                <li><a href="#">Science</a></li>
-                <li><a href="#">Sports</a></li>
-                <li><a href="#">Technology</a></li>
-            </ul>
+            <NavigationBar onCategoryClick={onCategoryClick}/>
         </div>
     </nav>
         </header>
