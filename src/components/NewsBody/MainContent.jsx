@@ -1,13 +1,16 @@
 
-const MainContent = ({articles}) => {
- 
-  // console.log(articles);
+const MainContent = ({articles,} ) => {
+
+  
+  
  
 
   return (
     <main className="my-10 lg:my-14">
     
       <div className="container mx-auto grid grid-cols-12 gap-8">
+
+     
         {/*Left Side*/}
         <div className="col-span-12 grid grid-cols-12 gap-6 self-start xl:col-span-8">
           <div className="col-span-12 grid grid-cols-12 gap-4">
@@ -15,7 +18,7 @@ const MainContent = ({articles}) => {
             articles.map((news, idx) => (
                 <div key={idx} className="col-span-12 md:col-span-6 lg:col-span-4">
                 {news.urlToImage && (
-                  <img className="w-full" src={news.urlToImage} alt="thumb" />
+                  <img className="w-full" src={news?.urlToImage} alt="thumb" />
                 )}
                 <div className="col-span-12 md:col-span-4">
                   <a href="#">
@@ -38,10 +41,10 @@ const MainContent = ({articles}) => {
         {/*Right Side*/}
         <div className="col-span-12 self-start xl:col-span-4">
           <div className="space-y-6 divide-y-2 divide-[#D5D1C9]">
-            {articles.map((news, idx) => (
+            {articles.slice(0, 10).map((news, idx) => (
               <div key={idx} className="col-span-12 mb-6 md:col-span-8">
                 {news.urlToImage && (
-                  <img className="w-full" src={news.urlToImage} alt="thumb" />
+                  <img className="w-full" src={news?.urlToImage} alt="thumb" />
                 )}
 
                 <div className="col-span-12 mt-6 md:col-span-4">

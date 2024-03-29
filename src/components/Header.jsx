@@ -1,6 +1,6 @@
 import logo from '../assets/icons/logo.png';
-import searchIcon from '../assets/icons/search.svg';
 import NavigationBar from './NavigationBar';
+import SearchBar from './SearchBar';
 
 const Header = ({onCategoryClick}) => {
 
@@ -73,7 +73,7 @@ const Header = ({onCategoryClick}) => {
             </a>
            
             <div className="flex items-center space-x-3 lg:space-x-8">
-                <img src={searchIcon} alt='SearchIcon'/>
+                <SearchBar/>
             </div>
         </div>
   

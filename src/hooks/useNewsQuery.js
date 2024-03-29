@@ -7,6 +7,7 @@ const useNewsQuery = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   
+  
 
   const fetchNews = async (category = '') => {
     setLoading(true);
@@ -30,5 +31,12 @@ const useNewsQuery = () => {
 
   return { articles, loading, error, fetchNews };
 };
+
+
+
+
+
+
+
 
 export default useNewsQuery;
